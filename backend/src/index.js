@@ -9,8 +9,6 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 dotenv.config();
 const PORT = process.env.PORT;
-const __dirname = path.resolve();
-
 const {app,server} = require('./lib/socket');
 
 const { connectDB } = require('./lib/db');
