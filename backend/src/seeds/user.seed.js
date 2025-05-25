@@ -1,8 +1,8 @@
-import dotenv from 'dotenv';
-import { connectDB } from '../lib/db.js';
-import User from '../models/user.model.js';
+import { config } from "dotenv";
+import { connectDB } from "../lib/db.js";
+import User from "../models/user.model.js";
 
-dotenv.config();
+config();
 
 const seedUsers = [
   // Female Users

@@ -17,7 +17,7 @@ const Navbar = () => {
               <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-primary" />
               </div>
-              <h1 className="text-lg font-bold">TikTalk</h1>
+              <h1 className="text-lg font-bold">Chatty</h1>
             </Link>
           </div>
 
@@ -26,6 +26,7 @@ const Navbar = () => {
               to={"/settings"}
               className={`
               btn btn-sm gap-2 transition-colors
+              
               `}
             >
               <Settings className="w-4 h-4" />

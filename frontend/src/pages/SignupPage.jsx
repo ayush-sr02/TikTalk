@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import { Eye, EyeOff, Loader2, Lock, Mail, MailIcon, MessageSquare, User } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import AuthImagePattern from "../components/AuthImagePattern";
@@ -14,7 +14,7 @@ const SignUpPage = () => {
     password: "",
   });
 
-  const { signUp, isSigningUp } = useAuthStore();
+  const { signup, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
     if (!formData.username.trim()) return toast.error("Full name is required");
@@ -28,12 +28,14 @@ const SignUpPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const success = validateForm();
-    if (success === true) signUp(formData);
+
+    if (success === true) signup(formData);
   };
 
   return (
-    <div className="min-h-screen grid pt-16 lg:grid-cols-2">
+    <div className="min-h-screen grid lg:grid-cols-2">
       {/* left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
