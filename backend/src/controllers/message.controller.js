@@ -1,9 +1,9 @@
-const User = require('../models/user.model');
-const Message = require('../models/message.model');
-const cloudinary = require('../lib/cloudinary');
-const {getReceiverSocketId, io} = require('../lib/socket');
+import User from '../models/user.model.js';
+import Message from '../models/message.model.js';
+import cloudinary from '../lib/cloudinary.js';
+import {getReceiverSocketId, io} from '../lib/socket.js';
 
-const getUsersForSideBar = async (req, res) => {
+export const getUsersForSideBar = async (req, res) => {
     try {
         const loggedInUserId = req.user._id;
         const filteredUsers = await User.find({_id: {$ne: loggedInUserId}}).select("-password");
@@ -14,7 +14,7 @@ const getUsersForSideBar = async (req, res) => {
     }
 }
 
-const getMessages = async (req, res) => {
+export const getMessages = async (req, res) => {
     try {
         const {id: userToChatId} = req.params;
         const myId = req.user._id;
@@ -31,7 +31,7 @@ const getMessages = async (req, res) => {
     }
 }
 
-const sendMessage = async (req, res) => {
+export const sendMessage = async (req, res) => {
     try {
         const {text, image} = req.body;
         const {id: receiverId} = req.params;
@@ -62,5 +62,3 @@ const sendMessage = async (req, res) => {
         return res.status(500).json({message: "Internal server error"});  
     }
 }
-
-module.exports = {getUsersForSideBar, getMessages, sendMessage};
