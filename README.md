@@ -1,5 +1,10 @@
 # ✨ Full Stack Realtime Chat App ✨
 
+## 🚀 Live Project
+
+Check out the live version here: (https://tiktalk-069h.onrender.com/)
+
+
 Highlights:
 
 - Tech stack: MERN + Socket.io + TailwindCSS + Daisy UI
@@ -8,8 +13,6 @@ Highlights:
 - Online user status
 - Global state management with Zustand
 - Error handling both on the server and on the client
-- At the end Deployment like a pro for FREE!
-- And much more!
 
 ### Setup .env file
 
